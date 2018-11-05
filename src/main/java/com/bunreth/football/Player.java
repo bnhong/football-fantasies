@@ -25,6 +25,14 @@ class Player {
 	public Player() {
 	}
 	
+	public String getFullName() {
+		return this.firstName + " " + this.lastName;
+	}
 	
+	public void setFullName(String fullName) {
+		String[] parts = fullName.split(" ");
+		this.firstName = parts[0];
+		this.lastName = parts[1];
+	}
 	
 }
