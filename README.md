@@ -45,6 +45,6 @@ $ curl -X DELETE localhost:8080/players/{player id}
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Spring Boot](https://spring.io/projects/spring-boot) - Used to create stand-alone applications on the Spring platform.
 
-## Authors
+## Author
 
 * **Bunreth Nhong** - *Initial work* - [Github](https://github.com/bnhong)
