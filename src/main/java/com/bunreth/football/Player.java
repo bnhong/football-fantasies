@@ -1,5 +1,7 @@
 package com.bunreth.football;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,13 +15,14 @@ class Player {
 	private @Id @GeneratedValue Long id;
 	private String firstName;
 	private String lastName;
-	private Position eligiblePosition; 
-	private GameStatus gameStatus;
+	private Position eligiblePosition;
+	private RosterStatus rosterStatus;
 	
 	public Player(String firstName, String lastName, Position eligiblePosition) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.eligiblePosition = eligiblePosition;
+		this.rosterStatus = RosterStatus.NOT_ACTIVE;
 	}
 
 	public Player() {

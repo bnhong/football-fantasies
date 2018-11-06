@@ -4,7 +4,7 @@ Implements a RESTful service to allow users to interact with fantasy football da
 
 ## Getting Started
 
-TBD
+Run FootballFantasiesApplication.java and use curl to interact with the data.
 
 ### Interacting with the data
 

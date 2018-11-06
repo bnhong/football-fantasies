@@ -1,8 +1,8 @@
 package com.bunreth.football;
 
-enum GameStatus {
+enum DraftStatus {
 	
-	NOT_STARTED,
+	PREDRAFT,
 	IN_PROGRESS,
-	COMPLETED;
+	POSTDRAFT;
 }
