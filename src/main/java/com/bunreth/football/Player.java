@@ -16,13 +16,11 @@ class Player {
 	private String firstName;
 	private String lastName;
 	private Position eligiblePosition;
-	private RosterStatus rosterStatus;
 	
 	public Player(String firstName, String lastName, Position eligiblePosition) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.eligiblePosition = eligiblePosition;
-		this.rosterStatus = RosterStatus.NOT_ACTIVE;
 	}
 
 	public Player() {
