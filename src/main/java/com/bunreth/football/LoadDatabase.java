@@ -41,12 +41,12 @@ class LoadDatabase {
 	private static final String CLIENT_SECRET = "YOUR CLIENT SECRET HERE";
 	
 	@Bean
-	CommandLineRunner initDatabase() {
+	CommandLineRunner initDatabase(PlayerRepository playerRepository) {
 
         return args -> {
         	String response = requestProtectedResource(ROSTER_RESOURCE_URL);
         	Document doc = convertStringToDocument(response);
-        	loadPlayerData(doc);
+        	loadPlayerData(playerRepository, doc);
 			
 			log.info("Connecting to Yahoo with OAuth...");
 		};
@@ -103,7 +103,7 @@ class LoadDatabase {
         return doc;
 	}
 	
-	private void loadPlayerData(Document doc) {
+	private void loadPlayerData(PlayerRepository playerRepository, Document doc) {
 		List<Player> players = new ArrayList<Player>();
         
         NodeList playerList = doc.getDocumentElement().getElementsByTagName("player");
@@ -134,6 +134,7 @@ class LoadDatabase {
         
         for (Player p : players) {
         	System.out.println(p.getFullName() + " - " + p.getEligiblePosition());
+        	playerRepository.save(new Player(p.getFirstName(), p.getLastName(), p.getEligiblePosition()));
         }
 	}
 }
